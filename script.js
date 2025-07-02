@@ -1,22 +1,27 @@
 // EXEMPLO 1
 function numerosSecretos(){
-    alert("Executando números secretos");
+    alert("Seja bem-vindo ao nosso jogo");
 
+    // Número aleatório
+    let numerosSecreto = 9;
+    // console.log(numerosSecreto);
+
+    // Armazenando chute do Usuário
+    let chute;
     let tentativas = 0;
-    let x = 10; // número secreto
-    let numeroUsuario;
 
-    // Enquanto o usuário não acertar, perguntar o número de novo
-    do{
-        numeroUsuario = prompt("Informe um número");
+    while(chute != numerosSecreto){
+        chute = parseInt(prompt('Escolha um número entre 1 e 10'));
         tentativas++;
-
-        if(x != numeroUsuario){
-            alert("Número incorreto")
+    
+        if(chute == numerosSecreto){
+            alert(`Parabéns! Você acertou o número secreto ${numerosSecreto} na ${tentativas} tentativa`);
+        }else if(chute > numerosSecreto){
+            alert(`O número secreto é menor que ${chute}. Tente novamente`);
+        }else{
+            alert(`O número secreto é maior que ${chute}. Tente novamente`);
         }
-
-    }while(x != numeroUsuario)
-    alert(`Parabéns, você acertou!\nNúmero secreto: ${x}\nTentativas: ${tentativas}`)
+    }
 }
 
 // EXEMPLO 2
